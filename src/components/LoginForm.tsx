@@ -1,13 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { LoginReqBody } from "../types";
 
 const LoginForm = () => {
+  const initialUserCredentials: LoginReqBody = {
+    client_id: "",
+    client_secret: "",
+    username: "",
+    password: "",
+  };
+
+  const [userCredentials, setUserCredentials] = useState(
+    initialUserCredentials
+  );
+
+  const handleLoginFormInput = (field: string, value: string) => {
+    setUserCredentials({ ...userCredentials, [field]: value });
+  };
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    // call login logic
+  };
+
   return (
     <Form
+      onSubmit={handleLogin}
       style={{
         paddingTop: "100px",
       }}
     >
+      <FormGroup>
+        <Label size="lg" for="client_id">
+          Client ID
+        </Label>
+        <Input
+          id="client_id"
+          name="client_id"
+          placeholder="Client id..."
+          type="text"
+          value={userCredentials.client_id}
+          onChange={(e) => handleLoginFormInput("client_id", e.target.value)}
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label size="lg" for="secret">
+          Client Secret
+        </Label>
+        <Input
+          id="secret"
+          name="secret"
+          placeholder="Client secret..."
+          type="text"
+          value={userCredentials.client_secret}
+          onChange={(e) =>
+            handleLoginFormInput("client_secret", e.target.value)
+          }
+        />
+      </FormGroup>
       <FormGroup>
         <Label size="lg" for="email">
           Email
@@ -17,6 +67,8 @@ const LoginForm = () => {
           name="email"
           placeholder="email@provider.com"
           type="email"
+          value={userCredentials.username}
+          onChange={(e) => handleLoginFormInput("username", e.target.value)}
         />
       </FormGroup>
       <FormGroup>
@@ -28,6 +80,8 @@ const LoginForm = () => {
           name="password"
           placeholder="Your strong password"
           type="password"
+          value={userCredentials.password}
+          onChange={(e) => handleLoginFormInput("password", e.target.value)}
         />
       </FormGroup>
       <Button>Login</Button>
