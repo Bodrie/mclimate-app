@@ -16,7 +16,7 @@ export type UserResponse = {
 export type UserState = {
   user: UserResponse;
   loading: boolean;
-  error: null;
+  error: null | string;
 };
 
 export type LoginReqBody = {

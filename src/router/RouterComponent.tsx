@@ -1,12 +1,16 @@
 import React from "react";
+import { useAppSelector } from "../store/hooks";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LoginPage from "../pages/LoginPage";
+import { LoginPage, HomePage } from "../pages";
 
 const RouterComponent = () => {
+  const user = useAppSelector((state) => state.user.user);
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
+        {user !== null && <Route path="/home" element={<HomePage />} />}
       </Routes>
     </Router>
   );

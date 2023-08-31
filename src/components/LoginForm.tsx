@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { login } from "../store/UserSlice";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { LoginReqBody } from "../types";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const user = useAppSelector((state) => state.user);
+
   const initialUserCredentials: LoginReqBody = {
     client_id: "",
     client_secret: "",
@@ -20,8 +27,12 @@ const LoginForm = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // call login logic
+    dispatch(login(userCredentials));
   };
+
+  useEffect(() => {
+    if (user.user !== null && !user.loading) navigate("/home");
+  }, [user]);
 
   return (
     <Form
@@ -32,8 +43,9 @@ const LoginForm = () => {
     >
       <FormGroup>
         <Label size="lg" for="client_id">
-          Client ID
+          Client ID 62419ac553304
         </Label>
+
         <Input
           id="client_id"
           name="client_id"
@@ -45,7 +57,7 @@ const LoginForm = () => {
       </FormGroup>
       <FormGroup>
         <Label size="lg" for="secret">
-          Client Secret
+          Client Secret 62419ac553269
         </Label>
         <Input
           id="secret"
@@ -60,8 +72,9 @@ const LoginForm = () => {
       </FormGroup>
       <FormGroup>
         <Label size="lg" for="email">
-          Email
+          Email interview@mclimate.eu
         </Label>
+
         <Input
           id="email"
           name="email"
@@ -73,7 +86,7 @@ const LoginForm = () => {
       </FormGroup>
       <FormGroup>
         <Label size="lg" for="password">
-          Password
+          Password interview_mclimate
         </Label>
         <Input
           id="password"
