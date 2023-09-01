@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as CommercialBuildingSvg } from "../../assets/commercial-building.svg";
 import { ReactComponent as FloorSvg } from "../../assets/icon_floor.svg";
 import { ReactComponent as LocationSvg } from "../../assets/location_icon.svg";
@@ -15,6 +16,7 @@ interface BuildingCardProps {
 }
 
 const BuildingCard = ({ buildings }: BuildingCardProps) => {
+  const navigate = useNavigate();
   return (
     <>
       {buildings.map(
@@ -52,7 +54,12 @@ const BuildingCard = ({ buildings }: BuildingCardProps) => {
                   <ChipCpuSvg />
                   <p>Devices: {devices.length}</p>
                   <p>Online devices: {onlineDevices.length}</p>
-                  <button className="card-arrow-right">
+                  <button
+                    className="card-arrow-right"
+                    onClick={() =>
+                      navigate("/dashboard", { state: { buildingId: id } })
+                    }
+                  >
                     <ArrowRightSvg />
                   </button>
                 </div>
