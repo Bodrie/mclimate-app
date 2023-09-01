@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { login } from "../store/UserSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { login } from "../../store/UserSlice";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import { LoginReqBody } from "../types";
+import { LoginReqBody } from "../../types";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -42,10 +42,13 @@ const LoginForm = () => {
       }}
     >
       <FormGroup>
-        <Label size="lg" for="client_id">
+        <Label
+          size="lg"
+          for="client_id"
+          style={{ width: "100%", textAlign: "left" }}
+        >
           Client ID 62419ac553304
         </Label>
-
         <Input
           id="client_id"
           name="client_id"
@@ -56,7 +59,11 @@ const LoginForm = () => {
         />
       </FormGroup>
       <FormGroup>
-        <Label size="lg" for="secret">
+        <Label
+          size="lg"
+          for="secret"
+          style={{ width: "100%", textAlign: "left" }}
+        >
           Client Secret 62419ac553269
         </Label>
         <Input
@@ -71,10 +78,13 @@ const LoginForm = () => {
         />
       </FormGroup>
       <FormGroup>
-        <Label size="lg" for="email">
+        <Label
+          size="lg"
+          for="email"
+          style={{ width: "100%", textAlign: "left" }}
+        >
           Email interview@mclimate.eu
         </Label>
-
         <Input
           id="email"
           name="email"
@@ -85,7 +95,11 @@ const LoginForm = () => {
         />
       </FormGroup>
       <FormGroup>
-        <Label size="lg" for="password">
+        <Label
+          size="lg"
+          for="password"
+          style={{ width: "100%", textAlign: "left" }}
+        >
           Password interview_mclimate
         </Label>
         <Input

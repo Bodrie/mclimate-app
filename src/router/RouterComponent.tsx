@@ -10,7 +10,7 @@ const RouterComponent = () => {
     <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        {user !== null && <Route path="/home" element={<HomePage />} />}
+        <Route path="/home" element={<HomePage />} />
       </Routes>
     </Router>
   );

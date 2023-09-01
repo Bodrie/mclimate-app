@@ -1,0 +1,21 @@
+.cards-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cards-heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.cards-heading p {
+  font-size: 24px;
+  font-weight: 400;
+  color: #51545a;
+  margin-bottom: 0;
+}
