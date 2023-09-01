@@ -1,15 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../store/hooks";
 import { Text, Icon } from "../../components";
 import { Building } from "../../types";
 import "./BuildingCard.css";
 
 interface BuildingCardProps {
-  buildings: Building;
+  buildings: Building[];
 }
 
 const BuildingCard = ({ buildings }: BuildingCardProps) => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   return (
     <>
       {buildings.map(
@@ -61,9 +63,9 @@ const BuildingCard = ({ buildings }: BuildingCardProps) => {
                   </Text>
                   <button
                     className="card-arrow-right"
-                    onClick={() =>
-                      navigate("/dashboard", { state: { buildingId: id } })
-                    }
+                    onClick={() => {
+                      navigate("/dashboard", { state: { buildingId: id } });
+                    }}
                   >
                     <Icon name="arrow-right" color="#77758b" size={25} />
                   </button>
