@@ -4,10 +4,11 @@ import "./Button.css";
 
 interface ButtonProps {
   text: string;
+  variant: "primary" | "secondary" | "tertiary";
   icon?: string | undefined;
   iconColor?: string;
   iconSize?: number;
-  variant: "primary" | "secondary" | "tertiary"
+  onClick?: () => void;
 }
 
 const Button = ({
@@ -15,10 +16,11 @@ const Button = ({
   icon,
   iconColor = "#000",
   iconSize = 0,
-  variant
+  variant,
+  onClick,
 }: ButtonProps) => {
   return (
-    <button className={`button-${variant}`}>
+    <button className={`button-${variant}`} onClick={onClick}>
       {icon && <Icon name={icon} color={iconColor} size={iconSize} />}
       {text}
     </button>

@@ -22,7 +22,7 @@
 .button-secondary {
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  max-height: 25px;
   border: none;
   border-radius: 15px;
   background-color: #ECEBEF;
