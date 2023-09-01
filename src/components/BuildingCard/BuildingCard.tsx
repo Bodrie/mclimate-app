@@ -1,13 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ReactComponent as CommercialBuildingSvg } from "../../assets/commercial-building.svg";
-import { ReactComponent as FloorSvg } from "../../assets/icon_floor.svg";
-import { ReactComponent as LocationSvg } from "../../assets/location_icon.svg";
-import { ReactComponent as ArrowRightSvg } from "../../assets/arrow_right_icon.svg";
-import { ReactComponent as KeySvg } from "../../assets/icon_appartment.svg";
-import { ReactComponent as DoorSvg } from "../../assets/icon_door.svg";
-import { ReactComponent as ChipCpuSvg } from "../../assets/chip_cpu_icon.svg";
-import { ReactComponent as EditSvg } from "../../assets/edit_icon.svg";
+import { Text, Icon } from "../../components";
 import { Building } from "../../types";
 import "./BuildingCard.css";
 
@@ -32,35 +25,47 @@ const BuildingCard = ({ buildings }: BuildingCardProps) => {
         }) => {
           return (
             <div key={`${name} - ${id}`} className="card-element">
-              <CommercialBuildingSvg className="card-image" />
+              <Icon name="building" color="#67aad8" size={100} />
               <div className="card-content">
                 <div className="card-building">
-                  <p>{name}</p>
+                  <Text textColor="#51545a">{name}</Text>
                   <button>
-                    <EditSvg />
+                    <Icon name="edit" color="#77758b" size={25} />
                   </button>
                 </div>
                 <div className="card-address">
-                  <LocationSvg />
-                  <p>{address}</p>
+                  <Text icon="location" iconColor="#77778d" iconSize={15}>
+                    {address}
+                  </Text>
                 </div>
                 <div className="card-info">
-                  <FloorSvg />
-                  <p>Floors: {floors.length}</p>
-                  <KeySvg />
-                  <p>Offices: {offices.length}</p>
-                  <DoorSvg />
-                  <p>Rooms: {rooms.length}</p>
-                  <ChipCpuSvg />
-                  <p>Devices: {devices.length}</p>
-                  <p>Online devices: {onlineDevices.length}</p>
+                  <Text icon="floors" iconColor="#77758b" iconSize={15}>
+                    Floors: {floors.length.toString()}
+                  </Text>
+                  <Text icon="key" iconColor="#77758b" iconSize={15}>
+                    Offices: {offices.length.toString()}
+                  </Text>
+                  <Text icon="door" iconColor="#77758b" iconSize={15}>
+                    Rooms: {rooms.length.toString()}
+                  </Text>
+                  <Text icon="chip-cpu" iconColor="#77758b" iconSize={15}>
+                    Devices: {devices.length.toString()}
+                  </Text>
+                  <Text
+                    textColor="#62be90"
+                    icon="dot"
+                    iconColor="#62be90"
+                    iconSize={24}
+                  >
+                    Online devices: {onlineDevices.length.toString()}
+                  </Text>
                   <button
                     className="card-arrow-right"
                     onClick={() =>
                       navigate("/dashboard", { state: { buildingId: id } })
                     }
                   >
-                    <ArrowRightSvg />
+                    <Icon name="arrow-right" color="#77758b" size={25} />
                   </button>
                 </div>
               </div>

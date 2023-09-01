@@ -1,16 +1,23 @@
 import React from "react";
-import { ReactComponent as AddSvg } from "../../assets/add_plus_icon.svg";
+import { Icon } from "../../components";
 import "./Button.css";
 
 interface ButtonProps {
   text: string;
-  plusIcon?: boolean | undefined;
+  icon?: string | undefined;
+  iconColor?: string;
+  iconSize?: number;
 }
 
-const Button = ({ text, plusIcon }: ButtonProps) => {
+const Button = ({
+  text,
+  icon,
+  iconColor = "#000",
+  iconSize = 0,
+}: ButtonProps) => {
   return (
     <button className="button-primary">
-      {plusIcon && <AddSvg />}
+      {icon && <Icon name={icon} color={iconColor} size={iconSize} />}
       {text}
     </button>
   );

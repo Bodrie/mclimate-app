@@ -88,17 +88,6 @@
   margin: 0 10px 0 5px;
 }
 
-.card-info p:last-of-type {
-  display: list-item;
-  list-style-position: inside;
-  color: #62be90;
-}
-
-.card-info p:last-of-type::before {
-  content: "";
-  margin-left: -15px;
-}
-
 .card-arrow-right {
   border: none;
   background-color: transparent;
