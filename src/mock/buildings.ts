@@ -1,6 +1,6 @@
 import { Building } from "../types";
 
-export const buildings: Building = [
+export const buildings: Building[] = [
   {
     id: 1,
     name: "Franklin Garner",

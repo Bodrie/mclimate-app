@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "../../components";
+import "./Text.css";
 
 interface TextProps {
   children: string | string[];
@@ -17,10 +18,10 @@ const Text = ({
   textColor = "inherit",
 }: TextProps) => {
   return (
-    <>
+    <div className="text-container">
       {icon && <Icon name={icon} color={iconColor} size={iconSize} />}
       <p style={{ color: textColor }}>{children}</p>
-    </>
+    </div>
   );
 };
 

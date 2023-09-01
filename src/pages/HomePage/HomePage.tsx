@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "reactstrap";
 import { buildings } from "../../mock/buildings";
-import { Button, BuildingCard } from "../../components";
+import { Button, BuildingCard, Text } from "../../components";
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -9,8 +9,14 @@ const HomePage = () => {
     <Container>
       <div className="cards-container">
         <div className="cards-heading">
-          <p>Buildings ({buildings.length})</p>
-          <Button text="Create New Building" variant="primary" icon="plus-icon" iconColor="white" iconSize={15} />
+          <Text textColor="#51545a">Buildings ({buildings.length.toString()})</Text>
+          <Button
+            text="Create New Building"
+            variant="primary"
+            icon="plus-icon"
+            iconColor="white"
+            iconSize={15}
+          />
         </div>
         <BuildingCard buildings={buildings} />
       </div>
