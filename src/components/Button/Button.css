@@ -1,0 +1,20 @@
+.button-primary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(
+    90deg,
+    rgba(64, 223, 255, 1) 20%,
+    rgba(68, 68, 208, 1) 100%
+  );
+  padding: 7px 10px;
+  transition: 200ms;
+}
+
+.button-primary:hover {
+  scale: 1.03;
+  transition: 200ms;
+}
