@@ -18,3 +18,23 @@
   scale: 1.03;
   transition: 200ms;
 }
+
+.button-secondary {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  border: none;
+  border-radius: 15px;
+  background-color: #ECEBEF;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+}
+
+.button-tertiary {
+  min-width: 25%;
+  border: none;
+  border-radius: 5px;
+  background-color: #ECEBEF;
+  font-size: 1.25rem;
+  padding: 5px 20px;
+}

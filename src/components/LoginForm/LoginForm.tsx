@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { login } from "../../store/UserSlice";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Form, FormGroup, Label, Input, Spinner, Button } from "reactstrap";
 import { LoginReqBody } from "../../types";
 
 const LoginForm = () => {
@@ -35,12 +35,7 @@ const LoginForm = () => {
   }, [user]);
 
   return (
-    <Form
-      onSubmit={handleLogin}
-      style={{
-        paddingTop: "100px",
-      }}
-    >
+    <Form onSubmit={handleLogin}>
       <FormGroup>
         <Label
           size="lg"
@@ -111,7 +106,14 @@ const LoginForm = () => {
           onChange={(e) => handleLoginFormInput("password", e.target.value)}
         />
       </FormGroup>
-      <Button>Login</Button>
+      <Button
+        color="primary"
+        disabled={user.loading}
+        style={{ minWidth: "120px" }}
+      >
+        {user.loading && <Spinner size="sm" />}
+        <span> {user.loading ? "Loading..." : "Login"}</span>
+      </Button>
     </Form>
   );
 };

@@ -7,6 +7,7 @@ interface ButtonProps {
   icon?: string | undefined;
   iconColor?: string;
   iconSize?: number;
+  variant: "primary" | "secondary" | "tertiary"
 }
 
 const Button = ({
@@ -14,9 +15,10 @@ const Button = ({
   icon,
   iconColor = "#000",
   iconSize = 0,
+  variant
 }: ButtonProps) => {
   return (
-    <button className="button-primary">
+    <button className={`button-${variant}`}>
       {icon && <Icon name={icon} color={iconColor} size={iconSize} />}
       {text}
     </button>
