@@ -2,9 +2,10 @@ import React from "react";
 import { Button, Navigation, Text } from "../../../components";
 import { useNavigate } from "react-router-dom";
 import img from "../../../assets/add-a-floor.png";
+import { Building } from "../../../types";
 
 interface ContentNavProps {
-  currentBuildingInfo: any;
+  currentBuildingInfo: Building;
 }
 
 const ContentNav = ({ currentBuildingInfo }: ContentNavProps) => {
@@ -44,7 +45,7 @@ const ContentNav = ({ currentBuildingInfo }: ContentNavProps) => {
                   <img
                     src={img}
                     alt="Add a floor"
-                    onClick={() => navigate("/dashboard/floor")}
+                    onClick={() => navigate("/dashboard/floor", {state: currentBuildingInfo})}
                   />
                   <Text textColor="#77758b">
                     There are no floors created for this building.
