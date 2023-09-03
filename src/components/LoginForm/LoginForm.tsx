@@ -39,7 +39,7 @@ const LoginForm = () => {
     <Form onSubmit={handleLogin}>
       <FormGroup>
         <Label size="lg" for="client_id" className="login-labels">
-          Client ID 62419ac553304
+          Client ID
         </Label>
         <Input
           id="client_id"
@@ -52,7 +52,7 @@ const LoginForm = () => {
       </FormGroup>
       <FormGroup>
         <Label size="lg" for="secret" className="login-labels">
-          Client Secret 62419ac553269
+          Client Secret
         </Label>
         <Input
           id="secret"
@@ -67,7 +67,7 @@ const LoginForm = () => {
       </FormGroup>
       <FormGroup>
         <Label size="lg" for="email" className="login-labels">
-          Email interview@mclimate.eu
+          Email
         </Label>
         <Input
           id="email"
@@ -80,7 +80,7 @@ const LoginForm = () => {
       </FormGroup>
       <FormGroup>
         <Label size="lg" for="password" className="login-labels">
-          Password interview_mclimate
+          Password
         </Label>
         <Input
           id="password"

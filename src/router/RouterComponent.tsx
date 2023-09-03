@@ -15,9 +15,13 @@ const RouterComponent = () => {
     <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/dashboard/floor" element={<DashboardFloorPage />} />
+        {user !== null && (
+          <>
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/dashboard/floor" element={<DashboardFloorPage />} />
+          </>
+        )}
       </Routes>
     </Router>
   );
