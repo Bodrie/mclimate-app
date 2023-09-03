@@ -35,4 +35,4 @@ export type Building = {
   rooms: { id: number; name: string }[];
   devices: { id: number; name: string }[];
   onlineDevices: { id: number; name: string }[];
-}[];
+};

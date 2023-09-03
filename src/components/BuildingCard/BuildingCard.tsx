@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../store/hooks";
 import { Text, Icon } from "../../components";
 import { Building } from "../../types";
 import "./BuildingCard.css";
@@ -11,7 +10,6 @@ interface BuildingCardProps {
 
 const BuildingCard = ({ buildings }: BuildingCardProps) => {
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
   return (
     <>
       {buildings.map(

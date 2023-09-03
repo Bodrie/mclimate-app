@@ -4,7 +4,7 @@
   border-radius: 5px;
   background-color: #fff;
   padding: 15px 10px;
-  filter: drop-shadow(0 0 0.4rem rgb(193, 193, 193));
+  filter: drop-shadow(0 0 0.2rem rgb(193, 193, 193));
 }
 
 .card-image {
