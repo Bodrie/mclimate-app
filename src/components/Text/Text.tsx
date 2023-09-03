@@ -8,6 +8,7 @@ interface TextProps {
   iconColor?: string;
   iconSize?: number;
   textColor?: string;
+  variant?: "smaller";
 }
 
 const Text = ({
@@ -16,9 +17,10 @@ const Text = ({
   iconColor = "#000",
   iconSize = 0,
   textColor = "inherit",
+  variant,
 }: TextProps) => {
   return (
-    <div className="text-container">
+    <div className={`text-container ${variant}`}>
       {icon && <Icon name={icon} color={iconColor} size={iconSize} />}
       <p style={{ color: textColor }}>{children}</p>
     </div>

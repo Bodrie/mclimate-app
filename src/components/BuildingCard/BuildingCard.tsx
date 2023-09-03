@@ -25,7 +25,12 @@ const BuildingCard = ({ buildings }: BuildingCardProps) => {
         }) => {
           return (
             <div key={`${name} - ${id}`} className="card-element">
-              <Icon name="building" color="#67aad8" size={100} />
+              <Icon
+                name="building"
+                color="#67aad8"
+                size={100}
+                className="card-image"
+              />
               <div className="card-content">
                 <div className="card-building">
                   <Text textColor="#51545a">{name}</Text>
@@ -39,19 +44,40 @@ const BuildingCard = ({ buildings }: BuildingCardProps) => {
                   </Text>
                 </div>
                 <div className="card-info">
-                  <Text icon="floors" iconColor="#77758b" iconSize={15}>
+                  <Text
+                    variant="smaller"
+                    icon="floors"
+                    iconColor="#77758b"
+                    iconSize={15}
+                  >
                     Floors: {floors.length.toString()}
                   </Text>
-                  <Text icon="key" iconColor="#77758b" iconSize={15}>
+                  <Text
+                    variant="smaller"
+                    icon="key"
+                    iconColor="#77758b"
+                    iconSize={15}
+                  >
                     Offices: {offices.length.toString()}
                   </Text>
-                  <Text icon="door" iconColor="#77758b" iconSize={15}>
+                  <Text
+                    variant="smaller"
+                    icon="door"
+                    iconColor="#77758b"
+                    iconSize={15}
+                  >
                     Rooms: {rooms.length.toString()}
                   </Text>
-                  <Text icon="chip-cpu" iconColor="#77758b" iconSize={15}>
+                  <Text
+                    variant="smaller"
+                    icon="chip-cpu"
+                    iconColor="#77758b"
+                    iconSize={15}
+                  >
                     Devices: {devices.length.toString()}
                   </Text>
                   <Text
+                    variant="smaller"
                     textColor="#62be90"
                     icon="dot"
                     iconColor="#62be90"

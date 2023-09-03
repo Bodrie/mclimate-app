@@ -11,7 +11,7 @@ interface CardProps {
 const Card = ({ content, variant }: CardProps) => {
   return (
     <div className="content-card">
-      <Icon name={variant} color="#67aad8" size={120} />
+      <Icon name={variant} color="#67aad8" size={120} className="content-card-img" />
       <div>
         <Heading variant={3} align="left" color="#67aad8">
           {variant === "building"

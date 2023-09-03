@@ -3,6 +3,30 @@
   align-items: center;
 }
 
+@media only screen and (max-width: 768px) {
+  .text-container {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 574px) {
+  .text-container.smaller {
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 575px) and (max-width: 766px) {
+  .text-container.smaller {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1200px) {
+  .text-container.smaller {
+    font-size: 14px;
+  }
+}
+
 .text-container p {
   margin-bottom: 0;
 }
