@@ -62,7 +62,7 @@ const BuildingCard = ({ buildings }: BuildingCardProps) => {
                   <button
                     className="card-arrow-right"
                     onClick={() => {
-                      navigate("/dashboard", { state: { buildingId: id } });
+                      navigate(`/dashboard?id=${id}`);
                     }}
                   >
                     <Icon name="arrow-right" color="#77758b" size={25} />

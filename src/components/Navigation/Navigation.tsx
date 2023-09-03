@@ -32,7 +32,7 @@ const Navigation = ({ tabs }: NavigationProps) => {
       </Nav>
       {tabs.map((currentTab) => {
         return (
-          <TabContent activeTab={activeTab}>
+          <TabContent key={`${currentTab.name} - ${currentTab.id}`} activeTab={activeTab}>
             <TabPane tabId={currentTab.id}>{currentTab.el}</TabPane>
           </TabContent>
         );

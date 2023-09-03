@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { buildings } from "../../mock/buildings";
 import { Button, Heading, Card, Text } from "../../components";
 import ContentNav from "./ContentNav/ContentNav";
 import "./DashboardPage.css";
+import { Building } from "../../types";
 
 const DashboardPage = () => {
   const navigate = useNavigate();
-  const { state } = useLocation();
-  const { buildingId } = state;
+  const { search } = useLocation();
+  const buildingId = search.slice(4);
+
   const currentBuilding = buildings.find(
-    (currentElement) => currentElement.id === buildingId
-  );
-  if (typeof currentBuilding === "undefined") return <></>;
+    (currentElement) => currentElement.id === Number(buildingId || 1)
+  ) as Building;
 
   return (
     <div className="dashboard-container">

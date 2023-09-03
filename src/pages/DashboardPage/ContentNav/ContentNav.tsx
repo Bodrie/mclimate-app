@@ -44,7 +44,7 @@ const ContentNav = ({ currentBuildingInfo }: ContentNavProps) => {
                   <img
                     src={img}
                     alt="Add a floor"
-                    onClick={() => navigate("/dashboard/floors")}
+                    onClick={() => navigate("/dashboard/floor")}
                   />
                   <Text textColor="#77758b">
                     There are no floors created for this building.
