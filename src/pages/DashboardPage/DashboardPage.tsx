@@ -31,7 +31,7 @@ const DashboardPage = () => {
       <Heading variant={2} align="left" color="#51545a">
         Building dashboard
       </Heading>
-      <Card content={currentBuilding} />
+      <Card variant="building" content={currentBuilding} />
       <div className="dashboard-devices">
         <div className="dashboard-devices-panel">
           <Text textColor="#77758b">Online Devices</Text>

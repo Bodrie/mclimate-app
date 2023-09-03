@@ -18,14 +18,14 @@ const DashboardFloorPage = () => {
           icon="arrow-left"
           iconColor="#77758b"
           iconSize={12}
-          onClick={() => navigate("/home")}
+          onClick={() => navigate(`/dashboard?id${currentBuilding.id}`)}
         />
         <Button text="Edit floor" variant="primary" />
       </div>
       <Heading variant={2} align="left" color="#51545a">
         Floor dashboard
       </Heading>
-      <Card content={currentBuilding} />
+      <Card variant="floors" content={currentBuilding} />
       <ContentNav />
     </div>
   );

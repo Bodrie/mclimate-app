@@ -5,33 +5,38 @@ import "./Card.css";
 
 interface CardProps {
   content: Building;
+  variant: "building" | "floors";
 }
 
-const Card = ({ content }: CardProps) => {
+const Card = ({ content, variant }: CardProps) => {
   return (
     <div className="content-card">
-      <Icon name="building" color="#67aad8" size={120} />
+      <Icon name={variant} color="#67aad8" size={120} />
       <div>
         <Heading variant={3} align="left" color="#67aad8">
-          {content.name}
+          {variant === "building"
+            ? content.name
+            : `Floor ${content.floors.length + 1}`}
         </Heading>
         <Text
           textColor="#77758b"
-          icon="location"
+          icon={variant === "building" ? "location" : "building"}
           iconColor="#77758b"
           iconSize={15}
         >
-          {content.address}
+          {variant === "building" ? content.address : content.name}
         </Text>
         <div className="content-card-info">
-          <Text
-            textColor="#77758b"
-            icon="floors"
-            iconColor="#77758b"
-            iconSize={15}
-          >
-            Floors: {content.floors.length.toString()}
-          </Text>
+          {variant === "building" && (
+            <Text
+              textColor="#77758b"
+              icon="floors"
+              iconColor="#77758b"
+              iconSize={15}
+            >
+              Floors: {content.floors.length.toString()}
+            </Text>
+          )}
           <Text
             textColor="#77758b"
             icon="key"
