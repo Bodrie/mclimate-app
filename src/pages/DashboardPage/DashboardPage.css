@@ -1,0 +1,52 @@
+.dashboard-container {
+  padding: 20px 30px;
+}
+
+.dashboard-head-panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-devices {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.dashboard-devices-panel {
+  flex: 0.5;
+  min-height: 120px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 15px;
+  filter: drop-shadow(0 0 0.2rem rgb(193, 193, 193));
+}
+
+.dashboard-nav-panels {
+  background-color: #fff;
+  min-height: 300px;
+  padding: 20px;
+}
+
+.dashboard-tab-floor {
+  padding: 20px;
+  background-color: #fff;
+  filter: drop-shadow(0 0 0.2rem rgb(193, 193, 193));
+}
+
+.create-floor {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.create-floor-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.create-floor-content img {
+  max-width: 150px;
+  cursor: pointer;
+}
