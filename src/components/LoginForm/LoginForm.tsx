@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { login } from "../../store/UserSlice";
 import { Form, FormGroup, Label, Input, Spinner, Button } from "reactstrap";
 import { LoginReqBody } from "../../types";
+import './LoginForm.css'
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -37,11 +38,7 @@ const LoginForm = () => {
   return (
     <Form onSubmit={handleLogin}>
       <FormGroup>
-        <Label
-          size="lg"
-          for="client_id"
-          style={{ width: "100%", textAlign: "left" }}
-        >
+        <Label size="lg" for="client_id" className="login-labels">
           Client ID 62419ac553304
         </Label>
         <Input
@@ -54,11 +51,7 @@ const LoginForm = () => {
         />
       </FormGroup>
       <FormGroup>
-        <Label
-          size="lg"
-          for="secret"
-          style={{ width: "100%", textAlign: "left" }}
-        >
+        <Label size="lg" for="secret" className="login-labels">
           Client Secret 62419ac553269
         </Label>
         <Input
@@ -73,11 +66,7 @@ const LoginForm = () => {
         />
       </FormGroup>
       <FormGroup>
-        <Label
-          size="lg"
-          for="email"
-          style={{ width: "100%", textAlign: "left" }}
-        >
+        <Label size="lg" for="email" className="login-labels">
           Email interview@mclimate.eu
         </Label>
         <Input
@@ -90,11 +79,7 @@ const LoginForm = () => {
         />
       </FormGroup>
       <FormGroup>
-        <Label
-          size="lg"
-          for="password"
-          style={{ width: "100%", textAlign: "left" }}
-        >
+        <Label size="lg" for="password" className="login-labels">
           Password interview_mclimate
         </Label>
         <Input

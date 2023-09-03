@@ -1,10 +1,8 @@
 import React from "react";
 import { Navigation, Text } from "../../../components";
-import { useNavigate } from "react-router-dom";
 import img from "../../../assets/add-a-device.png";
 
 const ContentNav = () => {
-  const navigate = useNavigate();
   return (
     <Navigation
       tabs={[
@@ -35,7 +33,7 @@ const ContentNav = () => {
           el: <div className="dashboard-nav-panels">No Informtion</div>,
         },
         {
-          id: 5,
+          id: 3,
           name: "UserManagement",
           el: <div className="dashboard-nav-panels">No Information</div>,
         },

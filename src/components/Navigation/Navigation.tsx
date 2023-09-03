@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
+import "./Navigation.css";
 
 interface NavigationProps {
   tabs: { id: number; name: string; el: JSX.Element }[];
@@ -32,7 +33,10 @@ const Navigation = ({ tabs }: NavigationProps) => {
       </Nav>
       {tabs.map((currentTab) => {
         return (
-          <TabContent key={`${currentTab.name} - ${currentTab.id}`} activeTab={activeTab}>
+          <TabContent
+            key={`${currentTab.name} - ${currentTab.id}`}
+            activeTab={activeTab}
+          >
             <TabPane tabId={currentTab.id}>{currentTab.el}</TabPane>
           </TabContent>
         );
